@@ -1,7 +1,10 @@
 var http = require('http');
 
-//create a server object:
 http.createServer(function (req, res) {
-  res.write('Hello world'); //write a response to the client
-  res.end(); //end the response
-}).listen(3000); // Change the port from 80 to 3000
+  console.log("Received request");
+  res.write('Hello world');
+  res.end();
+}).listen(3000, () => {
+  console.log("Server running at http://0.0.0.0:3000/");
+});
+
